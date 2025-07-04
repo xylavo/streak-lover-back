@@ -1,0 +1,32 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: techtemplesem
+    password: ${mail.password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+  jpa:
+    show-sql: true
+    properties:
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: ${db.url}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${db.username}
+    password: ${db.password}
+server:
+  compression:
+    enabled: true
+    mime-types: text/html, text/xml, text/plain, text/css, text/javascript, application/javascript, application/json, application/xml
+    min-response-size: 1024 # 최소 응답 크기 (1KB 이상일 때만 압축)
